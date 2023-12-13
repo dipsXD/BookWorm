@@ -19,7 +19,16 @@ public class BookController {
     }
 
     @GetMapping("/book-info")
-    public List<BookInfo> getBookInfo(@RequestParam String isbn) {
-        return bookService.getBookInfo(isbn);
+    public List<BookInfo> getBookInfoByIsbn(@RequestParam String isbn) {
+        return bookService.getBookInfoByIsbn(isbn);
+    }
+    @GetMapping("/book-info-author")
+    public List<BookInfo> getBookInfoByAuthor(@RequestParam String author) {
+        return bookService.getBookInfoByAuthor(author);
+    }
+
+    @GetMapping("/book-info-genre")
+    public List<BookInfo> getBookInfoByGenre(@RequestParam String genre) {
+        return bookService.getBookInfoByGenre(genre);
     }
 }
